@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: setup-docker
-      uses: docker-practice/actions-setup-docker@0.0.1
+    - uses: docker-practice/actions-setup-docker@0.0.1
      
     - name: "Setup Node.js"
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: 12.x
 
