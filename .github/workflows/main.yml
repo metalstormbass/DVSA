@@ -1,0 +1,25 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: setup-docker
+      uses: docker-practice/actions-setup-docker@0.0.1
+     
+    - name: "Setup Node.js"
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - name: npm install
+    - run: npm install -g serverless # install serverless
+    - run: npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
