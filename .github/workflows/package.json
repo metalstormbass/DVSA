@@ -1,0 +1,8 @@
+{
+  "name": "DVSA",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "serverless-cloudguard-plugin": "https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz"
+  }
+}
