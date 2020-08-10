@@ -1,0 +1,25 @@
+service: DVSA-Check
+package:
+  individually: true
+
+
+provider:
+  name: aws
+  timeout: 300
+  versionFunctions: false
+
+plugins:
+- serverless-cloudguard-plugin
+
+custom:
+  cloudguard:
+    fsp:
+      Enabled: false
+    proact:
+      Enabled: true
+      StoreJobReport: true
+
+functions:
+  pythonInput:
+    runtime: python2.7
+    handler: handler.lambda_handler
