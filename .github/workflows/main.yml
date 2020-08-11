@@ -51,9 +51,11 @@ jobs:
     - name : Configure cloudguard-config.json
       run: |
            touch ./cloudguard-config.json
+           cat "$DOME9_ID"
+           cat "$DOME9_SECRET"
            cat <<EOT >> ./cloudguard-config.json
            {
-                "cloudguardAccessToken": $DOME9_ID:$DOME9_SECRET
+                "cloudguardAccessToken": "$DOME9_ID":"$DOME9_SECRET"
                 }
                 EOT
 
