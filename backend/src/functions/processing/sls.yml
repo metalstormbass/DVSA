@@ -91,7 +91,7 @@ functions:
     memorySize: 128
     events:
     - s3:
-        bucket: ReceiptsBucket
+        bucket: receiptsbucket
         event: s3:ObjectCreated:*
         rules:
         - suffix: .raw
