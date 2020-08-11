@@ -31,10 +31,9 @@ jobs:
       run: |
           echo "Current Directory"
           pwd
-          ls -a
-          cat package-lock.json
+
           cd node_modules
-          cd ..
+   
           echo "Current Directory"
           pwd
           ls
