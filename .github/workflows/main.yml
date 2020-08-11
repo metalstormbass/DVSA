@@ -50,7 +50,7 @@ jobs:
     - name : Configure cloudguard-config.json
       uses: jwsi/secret-parser@v1
       with:
-        filename: test.json
+        filename: cloudguard-config.json
         secret-name: cloudguardAccessToken
         secret-value: ${{ secrets:DOME9_CREDS }}
           
