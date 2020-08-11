@@ -1,3 +1,3 @@
 {
-"cloudguardAccessToken": ${{ secrets.DOME9_ID }}:${{secrets.DOME9_SECRET }}
+"cloudguardAccessToken": "${{ secrets.DOME9_ID }}:${{ secrets.DOME9_SECRET }}"
 }
