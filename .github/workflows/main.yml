@@ -26,6 +26,10 @@ jobs:
       run: |
           npm install -g serverless 
           npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
+
+          
+    - name: Checkout Code
+      uses: actions/checkout@v1
     - name: Install Relevant Plugins
       run: |
           serverless plugin install --name serverless-finch 
@@ -33,9 +37,7 @@ jobs:
           serverless plungin install --name serverless-stack-output
           serverless plungin install --name serverless-scriptable-plugin
           serverless plungin install --name serverless-cloudguard-plugin
-          
-    - name: Checkout Code
-      uses: actions/checkout@v1
+            
     - name: Cloudguard Proact 
       run: |
           ls 
