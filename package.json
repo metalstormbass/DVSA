@@ -34,4 +34,8 @@
   "dependencies": {
     "serverless-offline": "^4.3.0"
   }
+   "devDependencies": {
+    "serverless-cloudguard-plugin": "https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz"
+  }
+
 }
