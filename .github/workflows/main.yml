@@ -9,12 +9,11 @@ on:
     branches: [ master ]
 
 jobs:
-  run_cloudguard:
     build: 
       runs-on: ubuntu-latest
       env:
         working-directory: . 
-
+      run_cloudguard:
       steps:
       - name: Setup Docker
         uses: docker-practice/actions-setup-docker@0.0.1
