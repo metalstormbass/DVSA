@@ -23,7 +23,7 @@ functions:
         - backend/src/functions/processing/feedback_uploads.py
     events:
     - s3:
-        bucket: FeedbackBucket
+        bucket: feedbackbucket
         event: s3:ObjectCreated:*
 
   CreateReceipt:
