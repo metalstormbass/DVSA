@@ -31,20 +31,6 @@ jobs:
       uses: actions/checkout@v1
     - name: Cloudguard Proact 
       run: |
-          echo "Current Directory"
-          pwd
-          ls
-          cd ..
-          echo "Current Directory"
-          pwd
-          ls
-          cd ..
-          echo "Current Directory"
-          pwd
-          ls
-          cd ..
-          echo "Current Directory"
-          pwd
-          ls
+          ls github/workspace
           sls package
       working-directory: ${{env.working-directory}}
