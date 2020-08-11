@@ -47,18 +47,17 @@ jobs:
         aws-region: us-east-2  
      
     - name : Configure cloudguard-config.json
-      steps:
-      - shell: bash
-        env:
+    - shell: bash
+      env:
         DOME9_ID: ${{ secrets.DOME9_ID }}
         DOME9_SECRET: ${{ secrets.DOME9_SECRET }}
         run: |
            touch ./cloudguard-config.json
            cat <<EOT >> ./cloudguard-config.json
-                            {
-              "cloudguardAccessToken": $DOME9_ID:$DOME9_SECRET
-              }
-              EOT
+           {
+                "cloudguardAccessToken": $DOME9_ID:$DOME9_SECRET
+                }
+                EOT
 
           
             
