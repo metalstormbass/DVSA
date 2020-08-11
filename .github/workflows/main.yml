@@ -27,6 +27,8 @@ jobs:
           npm install -g serverless 
           npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
           
+    - name: Checkout Code
+      uses: actions/checkout@v1
     - name: Cloudguard Proact 
       run: |
           echo "Current Directory"
