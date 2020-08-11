@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working-directory: . 
-      DOME9_ID: ${{ secrets.DOME9_ID }}
-      DOME9_SECRET: ${{ secrets.DOME9_SECRET }}
+    
     steps:
     - name: Setup Docker
       uses: docker-practice/actions-setup-docker@0.0.1
@@ -49,6 +48,9 @@ jobs:
         aws-region: us-east-2  
      
     - name : Configure cloudguard-config.json
+      env:
+       DOME9_ID: ${{ secrets.DOME9_ID }}
+       DOME9_SECRET: ${{ secrets.DOME9_SECRET }}
       run: |
            touch ./cloudguard-config.json
            cat "$DOME9_ID"
