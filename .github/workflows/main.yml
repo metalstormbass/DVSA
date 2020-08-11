@@ -52,7 +52,7 @@ jobs:
       with:
         filename: cloudguard-config.json
         secret-name: cloudguardAccessToken
-        secret-value: ${{ secrets:DOME9_CREDS }}
+        secret-value: ${{ secrets.DOME9_CREDS }}
           
             
     - name: Cloudguard Proact 
