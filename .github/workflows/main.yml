@@ -65,3 +65,15 @@ jobs:
       run: |
           sls package
       working-directory: ${{env.working-directory}}
+      
+    - name: Upload yml output
+      uses: actions/upload-artifact@v2
+      with:
+        name: cloudguard_output.yml
+        path: /cloudguard_output/CloudGuardScanResults.yml
+   
+    - name: Upload html output
+      uses: actions/upload-artifact@v2
+      with:
+       name: cloudguard_output.html
+       path: /cloudguard_output/CloudGuardScanResults.html
