@@ -48,6 +48,6 @@ jobs:
             
     - name: Cloudguard Proact 
       run: |
-          ls 
+          cat cloudguard-config.json
           sls package
       working-directory: ${{env.working-directory}}
