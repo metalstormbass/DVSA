@@ -11,6 +11,8 @@ on:
 jobs:
   build: 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./  
     steps:
     - name: setup-docker
       uses: docker-practice/actions-setup-docker@0.0.1
@@ -27,6 +29,5 @@ jobs:
           
     - name: Cloudguard Proact 
       run: |
-          echo "Changing Directory"
-          cd ../../
           sls package
+      working-directory: ${{env.working-directory}}
