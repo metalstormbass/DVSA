@@ -27,7 +27,6 @@ jobs:
           
     - name: Cloudguard Proact 
       run: |
-          echo "Script"
-          docker ps # verify that the docker is running
-          sls package # package and scan the functions in the serverless.yml file
-
+          echo "Changing Directory"
+          cd ../../
+          sls package
