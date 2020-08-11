@@ -52,7 +52,7 @@ jobs:
       env:
          SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
       run: |
-         cat "$SUPER_SECRET"
+         echo "$SUPER_SECRET"
 
             
     - name: Cloudguard Proact 
