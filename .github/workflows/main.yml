@@ -48,12 +48,12 @@ jobs:
         aws-region: us-east-2  
      
     - name : Configure cloudguard-config.json
-      uses: jwsi/secret-parser@v1
-      with:
-        filename: cloudguard-config.json
-        secret-name: "cloudguardAccessToken"
-        secret-value: ${{ secrets.DOME9_CREDS }}
-          
+      shell: bash
+      env:
+         SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
+      run: |
+         cat "$SUPER_SECRET"
+
             
     - name: Cloudguard Proact 
       run: |
