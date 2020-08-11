@@ -9,59 +9,70 @@ on:
     branches: [ master ]
 
 jobs:
-  build: 
-    runs-on: ubuntu-latest
-    env:
-      working-directory: . 
-    
-    steps:
-    - name: Setup Docker
-      uses: docker-practice/actions-setup-docker@0.0.1
-     
-    - name: "Setup Node.js"
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
-    - name: Install Serverless and Cloudguard Plugin
-      run: |
-          npm install -g serverless 
-          npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
-
-          
-    - name: Checkout Code
-      uses: actions/checkout@v1
-    - name: Install Relevant Plugins + Dependencies
-      run: |
-          npm install --save serverless-finch
-          npm install serverless-offline --save-dev
-          npm install --save serverless-stack-output
-          npm install --save serverless-scriptable-plugin
-          npm install --save serverless-cloudguard-plugin
-          pip install requests
-          
-      
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-2  
-     
-    - name : Configure cloudguard-config.json
-      shell: bash
+  run_cloudguard:
+    build: 
+      runs-on: ubuntu-latest
       env:
-         SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
-      run: |
-         echo "$SUPER_SECRET"
-         touch cloudguard-config.json
-         cat <<EOT >> ./cloudguard-config.json
-         {
-         "cloudguardAccessToken": "$SUPER_SECRET"
-         }
-         EOT
-            
-    - name: Run Cloudguard Proact 
-      run: |
-          sls package
-      working-directory: ${{env.working-directory}}
+        working-directory: . 
+
+      steps:
+      - name: Setup Docker
+        uses: docker-practice/actions-setup-docker@0.0.1
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Serverless and Cloudguard Plugin
+        run: |
+            npm install -g serverless 
+            npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
+
+
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Install Relevant Plugins + Dependencies
+        run: |
+            npm install --save serverless-finch
+            npm install serverless-offline --save-dev
+            npm install --save serverless-stack-output
+            npm install --save serverless-scriptable-plugin
+            npm install --save serverless-cloudguard-plugin
+            pip install requests
+
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2  
+
+      - name : Configure cloudguard-config.json
+        shell: bash
+        env:
+           SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
+        run: |
+           echo "$SUPER_SECRET"
+           touch cloudguard-config.json
+           cat <<EOT >> ./cloudguard-config.json
+           {
+           "cloudguardAccessToken": "$SUPER_SECRET"
+           }
+           EOT
+
+      - name: Run Cloudguard Proact 
+        run: |
+            sls package
+        working-directory: ${{env.working-directory}}
+
+  download_file:   
+    name: Download artifact
+    runs-on: ubuntu-latest
+    needs: run_cloudguard
+    steps:
+      - uses: actions/download-artifact@v1
+        with:
+           name: CloudGuardScanResults.yaml
+      - run: cat /cloudguard_output/CloudGuardScanResults.yaml
