@@ -31,12 +31,12 @@ jobs:
       run: |
           echo "Current Directory"
           pwd
-
-          cd node_modules
-   
+          ls
+          cd ..
           echo "Current Directory"
           pwd
           ls
+          cd ..
           echo "Current Directory"
           pwd
           ls
