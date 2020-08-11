@@ -15,7 +15,7 @@ jobs:
       working-directory: . 
     steps:
     - name: setup-docker
-      uses: docker-practice/actions-setup-docker@0.0.1
+      #uses: docker-practice/actions-setup-docker@0.0.1
      
     - name: "Setup Node.js"
       uses: actions/setup-node@v1
@@ -23,7 +23,7 @@ jobs:
         node-version: 12.x
 
     - name: npm install
-      run: |
+      #run: |
           npm install -g serverless 
           npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
           
@@ -31,7 +31,9 @@ jobs:
       run: |
           echo "Current Directory"
           pwd
-          ls
+          ls -a
+          cat package-lock.json
+          cd node_modules
           cd ..
           echo "Current Directory"
           pwd
@@ -43,5 +45,5 @@ jobs:
           echo "Current Directory"
           pwd
           ls
-          sls package
+       #   sls package
       working-directory: ${{env.working-directory}}
