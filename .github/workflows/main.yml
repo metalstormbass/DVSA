@@ -31,5 +31,7 @@ jobs:
       run: |
           pwd
           ls
+          cd ..
+          ls
           sls package
       working-directory: ${{env.working-directory}}
