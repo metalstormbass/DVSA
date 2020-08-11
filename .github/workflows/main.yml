@@ -31,13 +31,14 @@ jobs:
           
     - name: Checkout Code
       uses: actions/checkout@v1
-    - name: Install Relevant Plugins
+    - name: Install Relevant Plugins + Dependencies
       run: |
           npm install --save serverless-finch
           npm install serverless-offline --save-dev
           npm install --save serverless-stack-output
           npm install --save serverless-scriptable-plugin
           npm install --save serverless-cloudguard-plugin
+          pip install requests
           
       
     - name: Configure AWS Credentials
