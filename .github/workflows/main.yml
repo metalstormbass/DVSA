@@ -12,7 +12,7 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     env:
-      working-directory: ./  
+      working-directory: . 
     steps:
     - name: setup-docker
       uses: docker-practice/actions-setup-docker@0.0.1
