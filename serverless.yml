@@ -27,6 +27,13 @@ plugins:
 custom:
   stage: ${opt:stage, self:provider.stage}
   accountId: ${file(backend/serverless/scripts/vars.js):accountId}
+  cloudguard:
+    fsp:
+      Enabled: false
+    proact:
+      Enabled: true
+      StoreJobReport: true
+
   
   client:
     bucketName: dvsa-website-${self:custom.accountId}
