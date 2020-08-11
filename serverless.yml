@@ -34,6 +34,9 @@ custom:
     proact:
       Enabled: true
       StoreJobReport: true
+      Features:
+        PermissiveRole:
+          Enabled: true #true/false
 
   
   client:
