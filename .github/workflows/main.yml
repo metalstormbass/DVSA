@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: 12.x
 
-    - name: Install npm
+    - name: Install Serverless and Cloudguard Plugin
       run: |
           npm install -g serverless 
           npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
@@ -59,10 +59,8 @@ jobs:
          "cloudguardAccessToken": "$SUPER_SECRET"
          }
          EOT
-         cat cloudguard-config.json
             
-    - name: Cloudguard Proact 
+    - name: Run Cloudguard Proact 
       run: |
-          cat cloudguard-config.json
           sls package
       working-directory: ${{env.working-directory}}
