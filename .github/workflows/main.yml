@@ -37,6 +37,7 @@ jobs:
           npm install --save serverless-stack-output
           npm install --save serverless-scriptable-plugin
           npm install --save serverless-cloudguard-plugin
+          export SLS_DEBUG=true
             
     - name: Cloudguard Proact 
       run: |
