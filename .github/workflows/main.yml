@@ -30,9 +30,18 @@ jobs:
     - name: Cloudguard Proact 
       run: |
           echo "Current Directory"
+          pwd
+          ls
+          cd ..
+          echo "Current Directory"
+          pwd
           ls
           echo "Current Directory"
-          cd DVSA
+          pwd
+          ls
+          cd ..
+          echo "Current Directory"
+          pwd
           ls
           sls package
       working-directory: ${{env.working-directory}}
