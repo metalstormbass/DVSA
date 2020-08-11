@@ -32,11 +32,11 @@ jobs:
       uses: actions/checkout@v1
     - name: Install Relevant Plugins
       run: |
-          serverless plugin install --name serverless-finch 
-          serverless plungin install --name serverless-offline
-          serverless plungin install --name serverless-stack-output
-          serverless plungin install --name serverless-scriptable-plugin
-          serverless plungin install --name serverless-cloudguard-plugin
+          npm install --save serverless-finch
+          npm install serverless-offline --save-dev
+          npm install --save serverless-stack-output
+          npm install --save serverless-scriptable-plugin
+          npm install --save serverless-cloudguard-plugin
             
     - name: Cloudguard Proact 
       run: |
