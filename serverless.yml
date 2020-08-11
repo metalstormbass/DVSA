@@ -23,6 +23,7 @@ plugins:
   - serverless-offline
   - serverless-stack-output
   - serverless-scriptable-plugin
+  - serverless-cloudguard-plugin
 
 custom:
   stage: ${opt:stage, self:provider.stage}
