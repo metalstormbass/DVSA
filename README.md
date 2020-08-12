@@ -1,6 +1,6 @@
 This fork is meant to demonstrate the integration of Check Point's Cloudguard Serverless protection into Github Actions.
 
-See the documentation [Here](https://github.com/metalstormbass/DVSA/blob/master/Cloudguard%20Integration%20Instructions/README.md)
+See the documentation [HERE](https://github.com/metalstormbass/DVSA/blob/master/Cloudguard%20Integration%20Instructions/README.md).
 
 # ![alt DVSA](https://i.imgur.com/Z4L7MqL.png)
 
