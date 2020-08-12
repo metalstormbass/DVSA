@@ -1,7 +1,7 @@
 # Cloudguard Workload & Github Actions
 Written by Michael Braun
 
-<p align="center">
+<p align="left">
     <img src="https://img.shields.io/badge/Version-1.0.0-red" />
 </p>    
 
