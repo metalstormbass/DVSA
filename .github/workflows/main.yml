@@ -69,10 +69,10 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: cloudguard_output.yml
-        path: file:////home/runner/work/DVSA/DVSA/cloudguard_output/CloudGuardScanResults.yaml
+        path: ./cloudguard_output/CloudGuardScanResults.yaml
    
     - name: Upload html output
       uses: actions/upload-artifact@v2
       with:
        name: cloudguard_output.html
-       path: file:////home/runner/work/DVSA/DVSA/cloudguard_output/CloudGuardScanReport.html
+       path: ./cloudguard_output/CloudGuardScanReport.html
