@@ -70,7 +70,7 @@ custom:
       StoreJobReport: true
 ```
 
-First, notice the plugins installed. We will need to reference this later when defining the dependencies in our CI instructions.
+First, notice the plugins installed. We will need to reference this later when defining the dependencies in our CI instructions. As you can see, the FSP portion of the plugin is not enabled.
 
 Modify the file and add this line to include the Cloudguard plugin:
 ```bash
