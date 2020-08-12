@@ -32,7 +32,7 @@ receiptbucket<br>
 
 <b> Failure to do so will cause and error</b>    
 
-Create a Github Action
+### Create a Github Action
 
 ![](action.PNG)
 
