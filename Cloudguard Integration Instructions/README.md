@@ -22,13 +22,13 @@ Fork the [DVSA](https://github.com/OWASP/DVSA) repository into your personal Git
 
 Look at the https://github.com/metalstormbass/DVSA/blame/master/backend/src/functions/processing/sls.yml file. <br>
 
-Correct the following values:
-FeedbackBucket
-ReceiptBucket
+Correct the following values:<br>
+FeedbackBucket<br>
+ReceiptBucket<br>
 
-These need to be changed to: 
-feedbackbucket
-receiptbucket
+These need to be changed to: <br>
+feedbackbucket<br>
+receiptbucket<br>
 
 <b> Failure to do so will cause and error</b>    
 
