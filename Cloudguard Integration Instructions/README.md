@@ -51,7 +51,7 @@ First we need to tell the serverless app to include the Cloudguard plugin.
 
 Examine the the [serverless.yml](../serverless.yml)
 
-'''bash
+```bash
 plugins:
   - serverless-finch
   - serverless-offline
@@ -68,7 +68,7 @@ custom:
     proact:
       Enabled: true
       StoreJobReport: true
-'''
+```
 
 First, notice the plugins installed. We will need to reference this later when defining the dependencies in our CI instructions.
 
