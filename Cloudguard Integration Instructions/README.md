@@ -15,7 +15,7 @@ This first release focuses on the Proact module. Please review the [Check Point 
 [AWS Account](https://aws.amazon.com) with API keys <br>
 [Check Point Cloud Security Posture Management Account](https://dome9.com/) with API keys<bt>
 
-Ensure that you have onboarded the AWS account and enabled the Serverless protection. In its current form, the steps outlined in this document do not run anything on AWS. However, you need everything set up for the process to complete.
+Ensure that you have onboarded the AWS account and enabled the Serverless protection in Dome9. In its current form, the steps outlined in this document do not run anything on AWS. However, you need everything set up for the process to complete.
 
 ## Setup the Environment
 Fork the [DVSA](https://github.com/OWASP/DVSA) repository into your personal Github account. 
