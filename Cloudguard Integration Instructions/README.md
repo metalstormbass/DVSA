@@ -49,8 +49,22 @@ This is where we will define the build and testing procedure for our code. All G
 ## Prep environment for CI Actions to run
 First we need to tell the serverless app to include the Cloudguard plugin. 
 
-Examine the the [serverless.yml](../serverless.yml)
+Examine the the [serverless.yml](../serverless.yml) file:
 
+<b>Original</b>
+```bash
+plugins:
+  - serverless-finch
+  - serverless-offline
+  - serverless-stack-output
+  - serverless-scriptable-plugin
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  accountId: ${file(backend/serverless/scripts/vars.js):accountId}
+  ```
+  
+<b>Modified</B>
 ```bash
 plugins:
   - serverless-finch
