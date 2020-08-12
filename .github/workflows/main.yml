@@ -62,7 +62,6 @@ jobs:
     - name: Run Cloudguard Proact 
       run: |
           sls package
-          ls
       working-directory: ${{env.working-directory}}
       
     - name: Upload yml output
