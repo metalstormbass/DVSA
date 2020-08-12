@@ -40,7 +40,7 @@ Select manual workflow
 
 ![](mworkflow.PNG)
 
-The following folder will be automatically createdi n the repository:
+The following folder will be automatically created in the repository:
 
 /.github/workflows/
 
