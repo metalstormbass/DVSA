@@ -51,8 +51,9 @@ jobs:
       shell: bash
       env:
          SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
+ 
       run: |
-         
+         echo "$SUPER_SECRET"
          touch cloudguard-config.json
          cat <<EOT >> ./cloudguard-config.json
          {
