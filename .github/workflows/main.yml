@@ -1,3 +1,4 @@
+#Demo of Cloudguard Workload
 name: CI
 
 on:
@@ -51,7 +52,7 @@ jobs:
       env:
          SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
       run: |
-         echo "$SUPER_SECRET"
+         
          touch cloudguard-config.json
          cat <<EOT >> ./cloudguard-config.json
          {
