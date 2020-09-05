@@ -36,7 +36,6 @@ jobs:
           npm install serverless-offline --save-dev
           npm install --save serverless-stack-output
           npm install --save serverless-scriptable-plugin
-          npm install --save serverless-cloudguard-plugin
           pip install requests
           
       
@@ -47,23 +46,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2  
      
-    - name : Configure cloudguard-config.json
-      shell: bash
-      env:
-         SUPER_SECRET: ${{ secrets.DOME9_CREDS }}
- 
-      run: |
-         echo "$SUPER_SECRET"
-         touch cloudguard-config.json
-         cat <<EOT >> ./cloudguard-config.json
-         {
-         "cloudguardAccessToken": "$SUPER_SECRET"
-         }
-         EOT
-            
     - name: Run Cloudguard Proact 
       run: |
-          sls package
+          sls package -t ${{ secrets.DOME9_CREDS }}
       working-directory: ${{env.working-directory}}
       
     - name: Upload yml output
