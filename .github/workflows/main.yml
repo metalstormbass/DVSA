@@ -27,7 +27,7 @@ jobs:
           npm install serverless-offline --save-dev
           npm install --save serverless-stack-output
           npm install --save serverless-scriptable-plugin
-          npm install --save serverless-cloudguard-plugin
+          npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
           pip install requests
           
       
