@@ -126,37 +126,26 @@ jobs:
     env:
       working-directory: . 
     
-    steps:
-    - name: Setup Docker
-      uses: docker-practice/actions-setup-docker@0.0.1
-     
     - name: "Setup Node.js"
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
 ```        
 
-From here, we will then add the serverless environment and download the Cloudguard Plugin.
 
-```bash
- - name: Install Serverless and Cloudguard Plugin
-      run: |
-          npm install -g serverless 
-          npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
-```
-
-Once the environment has been prepped. The code in question must be checked out for testing and the dependencies have to be installed. These dependencies are defined in [serverless.yml](/../serverless.yml).
+Once the environment has been prepped. The code in question must be checked out for testing and the dependencies have to be installed. First, install the serverless framework and then install the serverless dependencies. These dependencies are defined in [serverless.yml](/../serverless.yml). On of the dependencies is the Cloudguard Serverless Plugin.
 
 ```bash
  - name: Checkout Code
       uses: actions/checkout@v1
     - name: Install Relevant Plugins + Dependencies
       run: |
+          npm install -g serverless 
           npm install --save serverless-finch
           npm install serverless-offline --save-dev
           npm install --save serverless-stack-output
           npm install --save serverless-scriptable-plugin
-          npm install --save serverless-cloudguard-plugin
+          npm install -D https://artifactory.app.protego.io/cloudguard-serverless-plugin.tgz
           pip install requests
 ```
 
