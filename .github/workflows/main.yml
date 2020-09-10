@@ -14,14 +14,6 @@ jobs:
       working-directory: . 
     
     steps:
-    - name: Setup Docker
-      uses: docker-practice/actions-setup-docker@0.0.1
-     
-    - name: "Setup Node.js"
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-
     - name: Checkout Code
       uses: actions/checkout@v1
     - name: Install Relevant Plugins + Dependencies
